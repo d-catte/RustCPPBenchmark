@@ -35,7 +35,7 @@ fn main() {
 Rust has been generally accepted as the modern replacement for C++. On February 26th, 2024, the United States White House announced that all C++ code was to be replaced
 with memory safe alternatives in the coming years, with Rust being remarked as one of the best alternatives. That [press release](https://www.whitehouse.gov/oncd/briefing-room/2024/02/26/press-release-technical-report/)
 has since been taken down by the Trump Administration; however the United States' efforts to eliminate C/C++ continue with [Project TRACTOR](https://www.darpa.mil/research/programs/translating-all-c-to-rust), 
-a translation layer from C to Rust. <br />
+a translation layer from C to Rust [1][2]. <br />
 
 That being said, the migration from C to Rust is not due to minute reasons. Rust is significantly easier to maintain than C as it has a large ecosystem of development tools to back it such as
 Clippy, an automated code optimizer. In addition to ease of development, Rust also is among the most memory safe languages, with many levels of security to prevent exploits
@@ -48,7 +48,7 @@ A good benchmark for comparing languages is their ability to compute complex alg
 All of the benchmarks were performed on a Ryzen 9 5950X CPU with 64GB of RAM at 3600MHz CL16. <br />
 
 <b>Fibonacci Sequence:</b> This test used recursive functions to calculate the fibonacci sequence up to the 40th value. This is considered among some of the
-intensive computations a computer can do with a time complexity of `O(2^n)`. The code as originally created in Rust with no external dependencies, then
+intensive computations a computer can do with a time complexity of `O(2^n)` [3]. The code as originally created in Rust with no external dependencies, then
 manually translated into the C++ equivalent. As show in Chart 1 below, Rust performs 72.14% better in Dev mode and 120.96% better in Release mode.<br />
 
 <p align="center">
@@ -59,7 +59,7 @@ manually translated into the C++ equivalent. As show in Chart 1 below, Rust perf
 <br />
 
 <b>Prime Finder:</b> This test used the Sieve of Eratosthenes to calculate up to the 10,000,000th prime number. This is a computationally heavy task with a time
-complexity of `O(n * log(log(n)))`. The code was originally created in Rust with no external dependencies, then ported to C++ to compare. As show below in Chart 2, Rust
+complexity of `O(n * log(log(n)))` [4]. The code was originally created in Rust with no external dependencies, then ported to C++ to compare. As show below in Chart 2, Rust
 was significantly faster than C++, being 2176.86% faster in Dev mode and an astonishing 3706.14% faster in Release mode. This is like due to C++'s lackluster
 I/O performance.<br />
 
@@ -88,10 +88,18 @@ Embedded Rust is a very experimental subset of the Rust programming language tha
 Embedded Rust programs can be only a few kilobytes in size. The main issue with Embedded Rust compared to C++ is the lack of documentation and resources for
 embedded functionality such as GPIO and UART. That is rapidly changing however. Many embedded systems engineers are beginning to recognize the importance of 
 Rust in this ecosystem. Recently for the Ohio Northern University Foundations of Design Showcase, the team I was a part of developed an [entire greenhouse
-monitoring system](https://github.com/QPCrummer/GEM-rs) completely in Embedded Rust.
+monitoring system](https://github.com/QPCrummer/GEM-rs) completely in Embedded Rust [5].
 <br />
 
 ## Conclusion
 C++ has real competition now. Devs no longer have to rely on the bulky, unoptimized code that C++ creates, nor do they have to worry about potential memory
 vulnerabilities that are associated with C and C++. Rust is the future for not only embedded systems, but for programming as a whole. It is an extremely
-versitile language with endless possibilities. It's just a matter of time until the entire world has completely oxidized.
+versitile language with endless possibilities. It's just a matter of time until the entire world has completely oxidized.<br />
+
+## Resources
+<b>[1]</b> The White House, “PRESS RELEASE: Future Software Should Be Memory Safe | ONCD,” The White House, Feb. 26, 2024. https://www.whitehouse.gov/oncd/briefing-room/2024/02/26/press-release-technical-report/ (accessed Feb. 15, 2025)<br />
+<b>[2]</b> “Translating All C to Rust,” Darpa.mil, 2024. https://www.darpa.mil/research/programs/translating-all-c-to-rust (accessed Feb. 15, 2025)<br />
+<b>[3]</b> Geeksforgeeks, “Program for Fibonacci numbers,” GeeksforGeeks, Mar. 06, 2011. https://www.geeksforgeeks.org/program-for-nth-fibonacci-number/ (accessed Feb. 15, 2025)<br />
+‌<b>[4]</b> Geeksforgeeks, “Sieve of Eratosthenes,” GeeksforGeeks, Jul. 27, 2012. https://www.geeksforgeeks.org/sieve-of-eratosthenes/ (accessed Feb. 15, 2025)<br />
+<b>[5]</b> QPCrummer, “GitHub - QPCrummer/GEM-rs: A Greenhouse controller written in rust for the PICO,” GitHub, 2024. https://github.com/QPCrummer/GEM-rs (accessed Feb. 15, 2025).
+‌
